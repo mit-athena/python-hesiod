@@ -23,7 +23,10 @@ class Lookup(object):
         pass
 
 class FilsysLookup(Lookup):
-    def __init__(self, name):
+    def __init__(self, name, **kwargs):
+        self.parseTypes = True
+        if 'parseFilsysTypes' in kwargs:
+            self.parseTypes = kwargs['parseFilsysTypes']
         Lookup.__init__(self, name, 'filsys')
     
     def parseRecords(self):
@@ -39,6 +42,13 @@ class FilsysLookup(Lookup):
                 priority = int(priority)
             
             parts = result.split(" ")
+            if len(parts) < 2:
+                raise HesiodParseError("Invalid filsys record: %s" % (result))
+            if not self.parseTypes:
+                self.filsys.append(dict(type=parts[0],
+                                        data=" ".join(parts[1::]),
+                                        priority=priority))
+                continue
             type = parts[0]
             if type == 'AFS':
                 self.filsys.append(dict(type=type,
