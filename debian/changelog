@@ -1,8 +1,11 @@
-python-hesiod (0.2.10-1debathena3) UNRELEASED; urgency=low
+python-hesiod (0.2.11-0debathena1) unstable; urgency=low
 
   * Bump debian/compat to 6
+  * Bump Standards-Version
+  * Tell FilsysLookup not to parse filsys records on its own (Trac: #1409)
+  * Properly populate the message field for ERR lockers (Trac: #1408)
 
- -- Jonathan Reed <jdreed@mit.edu>  Sun, 01 Jul 2012 12:21:42 -0400
+ -- Jonathan Reed <jdreed@mit.edu>  Mon, 21 Oct 2013 13:23:50 -0400
 
 python-hesiod (0.2.10-1debathena2) unstable; urgency=low
 

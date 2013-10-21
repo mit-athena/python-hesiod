@@ -3,7 +3,7 @@ Section: python
 Priority: extra
 Maintainer: Evan Broder <broder@mit.edu>
 Build-Depends: cdbs, debhelper, python-all-dev, python-support, python-pyrex, python-setuptools, libhesiod-dev
-Standards-Version: 3.7.2
+Standards-Version: 3.9.3
 
 Package: python-hesiod
 Architecture: any
