@@ -33,11 +33,25 @@ class FilsysLookup(Lookup):
         Lookup.parseRecords(self)
         
         self.filsys = []
-        self.multiRecords = (len(self.results) > 1)
+        # An FSGROUP need not contain multiple members.
+        # We are defining an FSGROUP as "Something for which all
+        # returned records have an integer as the last field"
+
+        self.isFSGroup = True
+        for result in self.results:
+            try:
+                if int(result.rsplit(" ", 1)[1]) < 1:
+                    self.isFSGroup = False
+                    break
+            except ValueError:
+                self.isFSGroup = False
+                break
+            except IndexError:
+                raise HesiodParseError("No fields found in result '%s'; shouldn't happen" % (result,))
         
         for result in self.results:
             priority = 0
-            if self.multiRecords:
+            if self.isFSGroup:
                 result, priority = result.rsplit(" ", 1)
                 priority = int(priority)
             
