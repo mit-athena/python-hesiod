@@ -1,8 +1,10 @@
-python-hesiod (0.2.12-0debathena1) UNRELEASED; urgency=low
+python-hesiod (0.2.12-0debathena1) unstable; urgency=low
 
   * Bump version to build a new upstream tarball
+  * Add git-buildpackage configuration
+  * Set source format to 3.0 (quilt)
 
- -- Alexander Chernyakhovsky <achernya@mit.edu>  Sat, 08 Mar 2014 01:56:51 -0500
+ -- Alexander Chernyakhovsky <achernya@mit.edu>  Sat, 08 Mar 2014 02:28:14 -0500
 
 python-hesiod (0.2.11-0debathena1) unstable; urgency=low
 
