@@ -1,3 +1,9 @@
+python-hesiod (0.2.12-0debathena1) UNRELEASED; urgency=low
+
+  * Bump version to build a new upstream tarball
+
+ -- Alexander Chernyakhovsky <achernya@mit.edu>  Sat, 08 Mar 2014 01:56:51 -0500
+
 python-hesiod (0.2.11-0debathena1) unstable; urgency=low
 
   * Bump debian/compat to 6
