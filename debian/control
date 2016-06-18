@@ -2,7 +2,7 @@ Source: python-hesiod
 Section: python
 Priority: extra
 Maintainer: Evan Broder <broder@mit.edu>
-Build-Depends: debhelper (>= 7), python-all-dev, python-support, python-pyrex, python-setuptools, libhesiod-dev, python-pyrex
+Build-Depends: debhelper (>= 7), python-all-dev (>= 2.6.6-3~), python2.7, python-pyrex, python-setuptools, libhesiod-dev
 Standards-Version: 3.9.3
 
 Package: python-hesiod
@@ -10,6 +10,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
 Provides: ${python:Provides}
 Conflicts: debathena-pyhesiodfs (<< 0.0.r144)
+X-Python-Version: 2.7
 Description: Python bindings for Hesiod
  PyHesiod provides a set of Python bindings for Hesiod, the Project
  Athena service name resolution protocol used at MIT and elsewhere.
